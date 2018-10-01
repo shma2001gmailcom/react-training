@@ -42,7 +42,6 @@ class Timer extends Component {
 
   render() {
     const value = this.state.value
-<<<<<<< HEAD
     return (
       <div className='timer App'>
         <p><h2>Timer:</h2></p>
@@ -58,35 +57,4 @@ class Timer extends Component {
   }
 }
 ReactDOM.render( <Timer/> , document.getElementById('root'));
-=======
-    return ( <
-      div className = 'timer App' >
-      <
-      p > Timer: < /p> <
-      p >
-      <
-      span > {
-        Math.round(value / INTERVAL / 60 / 60)
-      }: < /span> <
-      span > {
-        Math.round(value / INTERVAL / 60)
-      }: < /span> <
-      span > {
-        Math.round(value / INTERVAL)
-      }. < /span> <
-      span > {
-        value % INTERVAL
-      } < /span> <
-      /p> <
-      button onClick = {
-        (event) => this.reset()
-      } > {
-        this.state.buttonText
-      } < /button> <
-      /div>
-    );
-  }
-}
-ReactDOM.render( < Timer / > , document.getElementById('root'));
->>>>>>> cd586bbb10c2309b7234623a564d5847593ff5ae
 export default Timer;

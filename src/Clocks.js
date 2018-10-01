@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-var INTERVAL = 100;
-
 class Clocks extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +11,7 @@ class Clocks extends Component {
     }
 
     componentDidMount() {
-        this.timerID = setInterval(() => this.increment(), 1000/INTERVAL);
+        this.timerID = setInterval(() => this.increment(), 1000);
     }
 
     increment() {
