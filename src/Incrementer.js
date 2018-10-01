@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class Conditioner extends Component {
+class Incrementer extends Component {
     constructor(props) {
       super(props);
       this.state = {temperature: 0};
@@ -21,10 +21,10 @@ class Conditioner extends Component {
     render() {
       return (
         <div>
-          <h2>Текущая температура: {this.state.temperature}</h2>
+          <h2>Current value: {this.state.temperature}</h2>
           <button onClick={(event) => this.onDecrease(event)}>-</button>
           <button onClick={(event) => this.onIncrease(event)}>+</button>
         </div>);
     }
   }
-  export default Conditioner
+  export default Incrementer
