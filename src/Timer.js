@@ -23,7 +23,7 @@ class Timer extends Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(() => this.increment(), 1000 / INTERVAL);
+    this.timerID = setInterval(() => this.increment(), 1000/INTERVAL);
   }
 
   componentWillUnmount() {
@@ -35,8 +35,9 @@ class Timer extends Component {
       value: 0,
       buttonText: 'reset'
     });
-    clearInterval(this.timerID);
-    this.timerID = setInterval(() => this.increment(), 1000 / INTERVAL);
+
+  clearInterval(this.timerID);
+    this.timerID = setInterval(() => this.increment(),  1000/INTERVAL);
     this.setState({})
   }
 
@@ -46,14 +47,30 @@ class Timer extends Component {
       <div className='timer App'>
         <p><h2>Timer:</h2></p>
         <p><h2>
-          <span>{Math.round(value % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))} : </span>
-          <span>{Math.round(value% (1000 * 60 * 60) / (1000 * 60))} : </span>
-          <span>{Math.round(value/INTERVAL)}</span>
+          <span>{this.hours(value)} : </span>
+          <span>{this.minutes(value)} : </span>
+          <span>{this.seconds(value)}</span>
           {/* <span>{value % (1000 * 60) / 1000}</span> */}
         </h2></p>
         <button onClick={(event)=>this.reset()}>{this.state.buttonText}</button>
       </div>
     );
+  }
+
+  seconds(value) {
+    return this.addZero(Math.floor((value/100) % 60));
+  }
+
+  minutes(value) {
+    return this.addZero(Math.floor(value % (100 * 60 * 60) / (100 * 60)));
+  }
+
+  hours(value) {
+    return this.addZero(Math.floor(value % (100 * 60 * 60 * 24) / (100 * 60 * 60)));
+  }
+
+  addZero(value) {
+    return value < 10 ? "0" + value : value;
   }
 }
 ReactDOM.render( <Timer/> , document.getElementById('root'));
