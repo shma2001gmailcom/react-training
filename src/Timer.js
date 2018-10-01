@@ -46,10 +46,10 @@ class Timer extends Component {
       <div className='timer App'>
         <p><h2>Timer:</h2></p>
         <p><h2>
-          <span>{Math.round(value/INTERVAL/60/60)} : </span>
-          <span>{Math.round(value/INTERVAL/60)} : </span>
-          <span>{Math.round(value/INTERVAL)} . </span>
-          <span>{value % INTERVAL}</span>
+          <span>{Math.round(value % (1000 * 60 * 60 * 24) / (1000 * 60 * 60))} : </span>
+          <span>{Math.round(value% (1000 * 60 * 60) / (1000 * 60))} : </span>
+          <span>{Math.round(value/INTERVAL)}</span>
+          {/* <span>{value % (1000 * 60) / 1000}</span> */}
         </h2></p>
         <button onClick={(event)=>this.reset()}>{this.state.buttonText}</button>
       </div>
