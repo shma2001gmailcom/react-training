@@ -43,13 +43,13 @@ class Timer extends Component {
     const value = this.state.value
     return (
       <div className='timer App'>
-        <p><h2>Timer:</h2></p>
-        <p><h2>
+        <p/><h2>Timer:</h2>
+        <p/><h2>
           <span>{this.hours(value)} : </span>
           <span>{this.minutes(value)} : </span>
           <span>{this.seconds(value)}</span>
           {/* <span>{value % (1000 * 60) / 1000}</span> */}
-        </h2></p>
+        </h2>
         <button onClick={(event)=>this.reset()}>{this.state.buttonText}</button>
       </div>
     );
