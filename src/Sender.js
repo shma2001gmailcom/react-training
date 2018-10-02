@@ -15,7 +15,12 @@ class Sender extends Component {
       }
       
       handleClick() {
-        fetch('http://localhost:8080/react-back/index?value='+ this.state.value)//url to fetch
+        const host = 'http://localhost:';
+        const port = 8080;
+        const app = '/react-back/';
+        const endPoint = 'request/for/misha';
+        const url = host + port + app + endPoint + '?misha=';
+        fetch(url + this.state.value)//url to fetch
             .then(response => response.json())
             .then(data => this.setState({
                     value: this.state.value,

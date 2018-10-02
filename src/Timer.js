@@ -1,6 +1,4 @@
-import React, {
-  Component
-} from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 var INTERVAL = 100;
@@ -43,12 +41,13 @@ class Timer extends Component {
     const value = this.state.value
     return (
       <div className='timer App'>
-        <p/><h2>Timer:</h2>
-        <p/><h2>
+        <p/>
+        <h2>Timer:</h2>
+        <p/>
+        <h2>
           <span>{this.hours(value)} : </span>
           <span>{this.minutes(value)} : </span>
           <span>{this.seconds(value)}</span>
-          {/* <span>{value % (1000 * 60) / 1000}</span> */}
         </h2>
         <button className='button' onClick={(event) => this.reset()}> {this.state.buttonText} </button>
       </div>
@@ -71,5 +70,4 @@ class Timer extends Component {
     return value < 10 ? "0" + value : value;
   }
 }
-//ReactDOM.render( <Timer/> , document.getElementById('root'));
 export default Timer;
