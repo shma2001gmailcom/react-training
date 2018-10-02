@@ -27,6 +27,19 @@ body {
   font-size: large;
 }
 
+.button__container {
+  margin-top: 20px;
+  text-align: center;
+}
+.button {
+  background-color:darkslategray;
+  border: 1;
+  color: darkgray;
+  font-size: 16px;
+  height: 40;
+  width: 70;
+}
+
 /* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

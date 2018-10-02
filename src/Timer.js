@@ -50,7 +50,7 @@ class Timer extends Component {
           <span>{this.seconds(value)}</span>
           {/* <span>{value % (1000 * 60) / 1000}</span> */}
         </h2>
-        <button onClick={(event)=>this.reset()}>{this.state.buttonText}</button>
+        <button className='button' onClick={(event) => this.reset()}> {this.state.buttonText} </button>
       </div>
     );
   }
@@ -71,5 +71,5 @@ class Timer extends Component {
     return value < 10 ? "0" + value : value;
   }
 }
-ReactDOM.render( <Timer/> , document.getElementById('root'));
+//ReactDOM.render( <Timer/> , document.getElementById('root'));
 export default Timer;
