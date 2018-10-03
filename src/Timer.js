@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
 
 var INTERVAL = 100;
 class Timer extends Component {
