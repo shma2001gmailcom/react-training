@@ -17,7 +17,7 @@ class Sender extends Component {
       handleClick() {
         const host = 'http://localhost:';
         const port = 8080;
-        const app = '/react-back/';
+        const app = '/react-training-java/';
         const endPoint = 'request/for/misha';
         const url = host + port + app + endPoint + '?misha=';
         fetch(url + this.state.value)//url to fetch
