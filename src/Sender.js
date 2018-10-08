@@ -30,7 +30,7 @@ class Sender extends Component {
       render() {
         return (
             <div>
-                <div className='button__container'>
+                <div className='button-container'>
                 <div><input className='input' width='50' value={this.state.value} onChange={(event) => this.handleChange(event)}/> </div>
                 <div><button className='button' onClick={() => this.handleClick()}>fetch</button></div>
                 </div>
