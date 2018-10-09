@@ -29,7 +29,7 @@ class Sender extends Component {
             .then(response => response.json())
             .then(data => this.setState({
                     value: this.state.value,
-                    username: data.name,
+                    username: data.misha.name,
                     message: data.message
           }));
       }
