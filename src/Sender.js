@@ -6,12 +6,17 @@ class Sender extends Component {
         super();
         this.state = {
           username : '',
-          value:''
+          value:'',
+          message:''
         };
       }
 
       handleChange(event) {
-        this.setState({value: event.target.value, username: this.state.username});
+        this.setState({
+            value: event.target.value, 
+            username: this.state.username, 
+            message:this.state.message
+        });
       }
       
       handleClick() {
@@ -24,7 +29,8 @@ class Sender extends Component {
             .then(response => response.json())
             .then(data => this.setState({
                     value: this.state.value,
-                    username: data.name
+                    username: data.name,
+                    message: data.message
           }));
       }
       render() {
@@ -34,7 +40,7 @@ class Sender extends Component {
                 <div><input className='input' width='50' value={this.state.value} onChange={(event) => this.handleChange(event)}/> </div>
                 <div><button className='button' onClick={() => this.handleClick()}>fetch</button></div>
                 </div>
-                <p>{this.state.username}</p>
+                <p>{this.state.username} {this.state.message}</p>
             </div>
         );
     }
