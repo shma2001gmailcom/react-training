@@ -37,8 +37,16 @@ class Sender extends Component {
         return (
             <div>
                 <div className='button-container'>
-                <div><input className='input' width='50' value={this.state.value} onChange={(event) => this.handleChange(event)}/> </div>
-                <div><button className='button' onClick={() => this.handleClick()}>fetch</button></div>
+                    <div>
+                        <input className='input' width='50' 
+                        value={this.state.value}
+                        onChange={(event) => this.handleChange(event)}/> 
+                    </div>
+                    <div>
+                        <button className='button' onClick={() => this.handleClick()}>
+                             fetch
+                        </button>
+                    </div>
                 </div>
                 <p>{this.state.username} {this.state.message}</p>
             </div>
