@@ -5,6 +5,7 @@ body {
 
 .App {
   text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 /* .App-logo {
@@ -21,17 +22,21 @@ body {
 
 .App-title {
   font-size: 1.5em;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .App-intro {
   font-size: large;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .button-container {
+  font-family: Georgia, "Times New Roman", Times, serif;
   margin-top: 20px;
   text-align: center;
 }
 .button {
+  font-family: Georgia, "Times New Roman", Times, serif;
   background-color:darkslategray;
   border: 1;
   color: darkgray;
