@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Axios from 'axios';
 
 class Sender extends Component {
     constructor() {
@@ -13,9 +14,7 @@ class Sender extends Component {
 
       handleChange(event) {
         this.setState({
-            value: event.target.value, 
-            username: this.state.username, 
-            message:this.state.message
+            value: event.target.value
         });
       }
       
@@ -25,13 +24,28 @@ class Sender extends Component {
         const app = '/react-training-java/';
         const endPoint = 'request/for/misha';
         const url = host + port + app + endPoint + '?misha=';
-        fetch(url + this.state.value)//url to fetch
-            .then(response => response.json())
-            .then(data => this.setState({
-                    value: this.state.value,
-                    username: data.misha.name,
-                    message: data.message
-          }));
+        const rq = Axios.create();
+        const response = rq.get(url + this.state.value);
+        response 
+            .then(result=>{
+                console.log(result.data.misha.name);
+                console.log(result.data.message);
+                this.setState({
+                username:result.data.misha.name,
+                message:result.data.message
+            })})
+            .catch((error) => {console.log('Request failed', error)});
+        // fetch(url + this.state.value)//url to fetch
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log('Request succeeded with JSON response', data);
+        //         this.setState({
+        //             value: this.state.value,
+        //             username: data.misha.name,
+        //             message: data.message
+        //          });
+        //     })
+        //     .catch((error) => {console.log('Request failed', error)});
       }
       render() {
         return (
