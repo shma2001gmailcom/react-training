@@ -26,8 +26,8 @@ class Incrementer extends Component {
     return ( 
     <div>
       <h2>Current value: {this.state.value}</h2> 
-      <button className='button' onClick = {event => this.onDecrease(event)}> - </button> 
-      <button className='button' onClick = {event => this.onIncrease(event)}> + </button> 
+      <button className='button' plus="plus" onClick = {event => this.onDecrease(event)}>&#8722;</button> 
+      <button className='button' minus="minus" onClick = {event => this.onIncrease(event)}>&#43;</button> 
     </div>
     );
   }
