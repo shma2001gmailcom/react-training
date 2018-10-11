@@ -3,22 +3,22 @@ import './App.css';
 import Axios from 'axios';
 
 class Sender extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-          username : '',
-          value:'',
-          message:''
+            username : '',
+            value:'',
+            message:''
         };
-      }
+    }
 
-      handleChange(event) {
+    handleChange(event) {
         this.setState({
             value: event.target.value
         });
-      }
+    }
       
-      handleClick() {
+    handleClick() {
         const host = 'http://localhost:';
         const port = 8080;
         const app = '/react-training-java/';
@@ -46,7 +46,7 @@ class Sender extends Component {
         //          });
         //     })
         //     .catch((error) => {console.log('Request failed', error)});
-      }
+    }
       render() {
         return (
             <div>
